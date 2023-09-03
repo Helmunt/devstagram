@@ -17,7 +17,7 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         //dd($request);
-        //Modificar el request
+        //Modificar el request y no permitir espacios en username
         $request->request->add(['username'=> Str::slug($request->username)]);
         //Validación del Formulario
 
