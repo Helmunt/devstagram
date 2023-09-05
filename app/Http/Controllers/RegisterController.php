@@ -37,10 +37,10 @@ class RegisterController extends Controller
         ]);
 
         //Autenticar el usuario una vez se registre
-        auth()->attempt([
-            'email' => $request->email,
-            'password' => $request->password
-        ]);
+        //auth()->attempt([
+          //  'email' => $request->email,
+            //'password' => $request->password
+        //S]);
 
         //Otra forma de hacer el auth del usuario
         auth()->attempt($request->only('email', 'password'));
