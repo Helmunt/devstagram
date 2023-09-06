@@ -12,6 +12,11 @@
         <div class="md:w-4/12 mr-5 ml-5 bg-white p-6 rounded-lg shadow-xl ">
             <form method="POST" action="{{ route('login')}}" novalidate>
                 @csrf
+                @if (session('mensaje'))
+                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                        {{ session('mensaje') }}
+                    </p>
+                @endif
                 <div class="mb-5">
                     <label for="email" class="mb-2 block uppercase text-gray-500 font-black">
                         E-mail
@@ -46,6 +51,12 @@
                         {{ $message }}</p>
                     @enderror
                 </div>
+
+                <div class="mb-5">
+                    <input type="checkbox" name="remember">
+                    <label class="text-gray-500 text-sm">Mantener mi Sesión Abierta</label>
+                </div>
+
                 <input
                     type="submit"
                     value="Iniciar Sesión"
