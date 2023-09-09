@@ -17,11 +17,11 @@
                 @auth()
                     <nav class="flex gap-2 items-center">
                         <a class="font-bold text-gray-600 text-sm" href="#">
-                            Hola: <span class="font-normal">{{ $user->name}}</span>
+                            Hola: <span class="font-normal">{{ $user->username }}</span>
                         </a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button type="submit" class="font-bold uppercase text-gray-600 text-sm" href="{{ route('logout')}}">
+                            <button type="submit" class="font-bold uppercase text-gray-600 text-sm">
                                 Cerrar Sesión
                             </button>
                         </form>
