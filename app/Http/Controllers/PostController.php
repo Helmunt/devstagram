@@ -18,4 +18,10 @@ class PostController extends Controller
             'user' => $user
         ]);
     }
+    public function create(User $user){
+        $user = auth()->user();
+        return view('posts.create', [
+            'user' => $user
+        ]);
+    }
 }
