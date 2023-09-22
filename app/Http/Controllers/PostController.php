@@ -68,4 +68,11 @@ class PostController extends Controller
         //Regresamos al usuario a su muro con su propio nombre
         return redirect()->route('posts.index', auth()->user()->username);
     }
+
+    public function show(User $user, Post $post)
+    {
+        return view('posts.show', [
+            'post' => $post
+        ]);
+    }
 }
