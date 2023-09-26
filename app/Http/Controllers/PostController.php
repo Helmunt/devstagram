@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index(User $user)
     {
 
-        //retorrnando el listado de los posts pero filtrado por el usuario usando model routing bindig
+        //retorrnando el listado de los posts pero filtrado por el usuario usando model routing biding
         $posts = Post::where('user_id', $user->id)->paginate(4);
 
 
